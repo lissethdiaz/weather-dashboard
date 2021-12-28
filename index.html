@@ -2,11 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
 </head>
+
 <body>
-  
+    <!-- Weather Dashboard Header -->
+    <header class="navbar">
+        <h1 class="text-light mx-auto">Weather Dashboard</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <!-- Column for the sidebar -->
+            <aside class="col-lg-4">
+                <div class="card bg-light p-2 mb-2">
+                    <!-- Search form -->
+                    <h4>Search for a City :</h4>
+                    <form class="form-inline" id="city-form">
+                        <input class="form-control sm-2" id="city-input" type="search" aria-label="Search">
+                        <button type="button" class="btn btn-primary" type="submit" id="form-submit">Search</button>
+                    </form>
+                    <!-- New search buttons created for each city searched will be added to the list -->
+                    <ul class="list-group mt-2" id="city-list">
+                    </ul>
+                </div>
+            </aside>
+            <!-- Second column to hold the current and 5-day forecast -->
+            <div class="col-lg-8">
+                <!-- Placeholders for the current weather data. This will not display until the user 
+                searches for the first city -->
+                <section class="card p-2" id="current" style="display:none;">
+                    <h1 id="city"></h1>
+                    <h5 id="date"></h5>
+                    <p id="temp"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+                    <p id="uv-index">UV Index: <span class="color"></span></p>
+                </section>
+                <!-- Placehold for the 5-day forecast -->
+                <section class="mt-2 mb-2" id="five-day" style="display:none;">
+                    <h3>5-Day Forecast:</h3>
+                    <!-- Cards will be dynamically created the the weather day for the 5-day forecast -->
+                    <div class="card-deck">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
